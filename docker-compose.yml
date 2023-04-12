@@ -28,6 +28,14 @@ services:
     env_file:
       - .env
 
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'
+    ports:
+      - 1025:1025
+      - 8025:8025
+
 volumes:
   db-data:
     driver: local
