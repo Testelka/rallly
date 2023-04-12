@@ -1,119 +1,18 @@
-<img src="./docs/images/logo.png" alt="Rallly" />
+#Practice your web testing skills
 
-<div align="center">
+This is a fork of group meetings scheduling app prepared for practicing web testing skills. __Do not use it in production environment__. 
 
-[![Actions Status](https://github.com/lukevella/rallly/workflows/ci/badge.svg?branch=main)](https://github.com/lukevella/rallly/actions)
-[![Crowdin](https://badges.crowdin.net/rallly/localized.svg)](https://crowdin.com/project/rallly)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-orange.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Discord](https://img.shields.io/badge/-Join%20Chat-7289DA?logo=discord&logoColor=white)](https://discord.gg/uzg4ZcHbuM)
-[![Donate](https://img.shields.io/badge/-Donate%20with%20Paypal-white?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=7QXP2CUBLY88E)
-
-</div>
-
-Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability. Save time and avoid back-and-forth emails.
-
-Built with [Next.js](https://github.com/vercel/next.js/), [Prisma](https://github.com/prisma/prisma), [tRPC](https://github.com/trpc/trpc) & [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
-
-<div align="center">
-
-<img src="./docs/images/poll-image.png" alt="Rallly"  />
-
-</div>
-
-## Self-hosting
-
-Check out the [self-hosting repo](https://github.com/lukevella/rallly-selfhosted) for more information on running your own instance of Rallly.
-
-## Running locally
-
+##How to run it with Docker
+You need to have Docker and Docker Compose installed. 
 Clone this repo and change directory to the root of the repository.
+'''git clone https://github.com/Testelka/rallly.git
+cd rallly'''
 
-```bash
-git clone https://github.com/lukevella/rallly.git
-cd rallly
-```
+Then start the server by running:
+'docker compose up -d'
 
-Copy the sample `.env` file then open it and set the variables.
+It might take a while. Your web app will be available at 'http://localhost:3000'.
 
-```bash
-cp sample.env .env
-```
+##Documentation
 
-_See [configuration](#configuration) to see what parameters are available._
-
-Install dependencies
-
-```
-yarn
-```
-
-Next, run the following command:
-
-```
-yarn db:generate && yarn db:reset
-```
-
-This will:
-
-- generate the prisma database client
-- run migrations to create the database schema
-- seed the database with some random data
-
-Start the Next.js server
-
-```
-# For development
-yarn dev
-# For production
-yarn build
-yarn start
-```
-
-## Configuration Options
-
-The app can be configured with the following environment variables.
-
-| Environment Variable   | Default               | Description                                                                                                                                     |
-| ---------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AUTH_REQUIRED`        | false                 | Set to `true` to require authentication for creating new polls and accessing admin pages                                                        |
-| `ALLOWED_EMAILS`       |                       | Comma separated list of email addresses that are allowed to register and login. Wildcard characters are supported. Example: `*@yourcompany.com` |
-| `DISABLE_LANDING_PAGE` | false                 | Whether or not to disable the landing page                                                                                                      |
-| `NEXT_PUBLIC_BASE_URL` | http://localhost:3000 | The base url where this instance is accessible, including the scheme (eg. `http://` or `https://`), the domain name, and optionally a port.     |
-| `SECRET_PASSWORD`      |                       | A random 32-character secret key used to encrypt user sessions                                                                                  |
-| `SUPPORT_EMAIL`        |                       | All outgoing emails will show this email as the sender's email address, which also serves as the support email.                                 |
-| `SMTP_HOST`            | localhost             | The host address of your SMTP server                                                                                                            |
-| `SMTP_PORT`            | 25 or 465             | The port of your SMTP server                                                                                                                    |
-| `SMTP_SECURE`          | false                 | Set to "true" if SSL is enabled for your SMTP connection                                                                                        |
-| `SMTP_USER`            |                       | The username (if auth is enabled on your SMTP server)                                                                                           |
-| `SMTP_PWD`             |                       | The password (if auth is enabled on your SMTP server)                                                                                           |
-
-## Contributors
-
-Please read our [contributing guide](CONTRIBUTING.md) to learn about how to contribute to this project.
-
-### Translators 🌐
-
-You can help translate Rallly to another language by following our [guide for translators](https://github.com/lukevella/rallly/wiki/Guide-for-translators).
-
-## License
-
-Rallly is open-source under the GNU Affero General Public License Version 3 (AGPLv3) or any later version. See [LICENSE](LICENSE) for more detail.
-
-## Sponsors
-
-Thank you to our sponsors for making this project possible.
-
-<a href="https://github.com/cpnielsen" target="_blank"><img src="https://avatars.githubusercontent.com/u/1258576?v=4" width="48" height="48" /></a>&nbsp;
-<a href="https://github.com/iamericfletcher" target="_blank"><img src="https://avatars.githubusercontent.com/u/64165327?v=4" width="48" height="48" /></a>&nbsp;
-<a href="https://github.com/arcticFox-git" target="_blank"><img src="https://avatars.githubusercontent.com/u/86988982?v=4" width="48" height="48" /></a>&nbsp;
-<a href="https://github.com/zakwear" target="_blank"><img src="https://avatars.githubusercontent.com/u/55545774?v=4" width="48" height="48" /></a>&nbsp;
-
-[Become a sponsor &rarr;](https://github.com/sponsors/lukevella)
-
-And thanks to these companies for providing their services to host and run [rallly.co](https://rallly.co).
-
-<a href="https://vercel.com/?utm_source=rallly&utm_campaign=oss"><img src="./apps/web/public/vercel-logotype-dark.svg" alt="Powered by Vercel" height="30" /></a>
-&nbsp;&nbsp;&nbsp;
-<a href="https://m.do.co/c/f91efc9c9e50"><img src="./apps/web/public/digitalocean.svg" alt="Digital Ocean" height="30" /></a>
-&nbsp;&nbsp;&nbsp;
-<a href="https://sentry.io"><img src="./apps/web/public/sentry.svg" alt="Sentry" height="30" /></a>
+Check how the app works here: https://support.rallly.co/.
