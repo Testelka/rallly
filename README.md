@@ -9,7 +9,7 @@ Clone this repo and change directory to the root of the repository.
 git clone https://github.com/Testelka/rallly.git
 cd rallly
 ```
-Do not change the name of the "rallly" folder. If you do, you need to first change smtp host in .env file.
+Do not change the name of the "rallly" folder. If you do, you need to first change SMTP_HOST (rallly-mailhog-1) in .env file before running a server.
 
 Then start the server by running:
 ```
